@@ -1,0 +1,51 @@
+<!-- <template id="product-card">
+  <style>
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      gap: 1rem;
+      padding: 1rem;
+      width: 100px;
+    }
+    .image {
+      height: 5rem;
+    }
+    [slot="name"] {
+      font-size: 24px;
+    }
+  </style>
+  <div class="product-card">
+    <div class="image"></div>
+    <slot name="name"></slot>
+    <slot name="price"></slot>
+  </div>
+</template> -->
+
+<!-- EXAMPLE OF USE -->
+<!-- <product-card>
+    <span slot="name">name example</span>
+    <span slot="price">price example</span>
+  </product-card> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script type="module" src="./products.js"></script>
+    <header>
+      <a href="./index.html" class="title">Webpage</a>
+      <nav>
+        <a href="./products.html">Products</a>
+        <a href="./cart.html" class="cart-button">🛒</a>
+      </nav>
+    </header>
+
+    <div class="product-container"></div>
+  </body>
+</html>
