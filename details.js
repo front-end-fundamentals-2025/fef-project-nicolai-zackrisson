@@ -11,6 +11,7 @@ console.log(product);
 
 document.querySelector(".details-title").textContent = product.name;
 document.querySelector(".price").textContent = product.price + "kr";
+document.querySelector(".description").textContent = product.description;
 const button = document.querySelector(".add-button");
 
 const getCart = () => {
