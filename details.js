@@ -1,4 +1,5 @@
 import { products } from "./data.js";
+import { renderCartCount } from "./main.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -36,6 +37,8 @@ button.addEventListener("click", () => {
     cart.push({ id: product.id, count: 1 });
     button.textContent = `Add To Cart (1)`;
   }
+
+  renderCartCount();
 
   localStorage.setItem("cart", JSON.stringify(cart));
 });

@@ -23,7 +23,7 @@ nav {
   align-items: end;
 }
 
-.cart-button {
+.cart-icon {
   font-size: 32px;
 }
 
@@ -34,13 +34,4 @@ nav {
   gap: 1rem;
   margin: 1rem;
   /* border: 1px solid black; */
-}
-
-product-card {
-  /* display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  gap: 1rem;
-  padding: 1rem;
-  width: 100px; */
 }

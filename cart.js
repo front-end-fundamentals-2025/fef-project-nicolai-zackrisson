@@ -1,4 +1,5 @@
 import { products } from "./data.js";
+import { renderCartCount } from "./main.js";
 
 const cartItems = document.querySelector(".cart-items");
 
@@ -23,42 +24,31 @@ const renderCart = () => {
     `;
           })
           .join("");
-
-  document.querySelectorAll(".add-button").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const id = getItemId(e.target);
-      addItem(id);
-    });
-  });
-  document.querySelectorAll(".remove-button").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const id = getItemId(e.target);
-      removeItem(id);
-    });
-  });
 };
 
+cartItems.addEventListener("click", (e) => {
+  const id = getItemId(e.target);
+  handleItem(id, e.target.className.replace("-button", ""));
+});
+
 const getItemId = (element) => {
-  //   console.log(element);
   return parseInt(element.closest(".cart-item").id, 10);
 };
 
-const addItem = (id) => {
+const handleItem = (id, action) => {
   const item = cart.find((item) => item.id === id);
-  item.count += 1;
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart();
-};
-const removeItem = (id) => {
-  console.log(1);
-  const item = cart.find((item) => item.id === id);
-  if (item.count <= 1) {
+
+  if (action === "add") {
+    item.count += 1;
+  } else if (item.count <= 1) {
     cart.splice(cart.indexOf(item), 1);
   } else {
     item.count -= 1;
   }
+
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
+  renderCartCount();
 };
 
 renderCart();
