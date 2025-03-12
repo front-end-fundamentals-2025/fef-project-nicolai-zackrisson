@@ -15,6 +15,7 @@ const renderCart = () => {
 
             return `
     <div class="cart-item" id="${item.id}">
+        
         <p class="item-name">${product.name}</p>
         <p class="item-price">${product.price}kr</p>
         <p class="item-count">count: ${item.count}</p>

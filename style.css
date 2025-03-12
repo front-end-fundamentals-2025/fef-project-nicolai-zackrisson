@@ -31,6 +31,31 @@ nav {
   font-size: 32px;
 }
 
+.products-page {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (min-width: 992px) {
+  .products-page {
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .products-page {
+    margin-right: 150px;
+    margin-left: 150px;
+  }
+}
+
+.side-bar {
+  background-color: gray;
+  height: 1000px;
+  width: 500px;
+}
+
 .product-container {
   display: flex;
   flex-wrap: wrap;
@@ -41,8 +66,65 @@ nav {
   /* border: 1px solid black; */
 }
 
-@media (min-width: 992px) {
-  .product-container * {
-    width: 200px;
-  }
+.details-page {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.details-container {
+  border: solid 1px black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 300px;
+  /* transition: all 1s ease-in-out; */
+}
+
+.details-container .details-image {
+  font-size: 180px;
+  align-self: center;
+}
+
+.details-container .divider {
+  border-bottom: solid 1px black;
+}
+
+.details-container .info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.details-title {
+  font-size: 32px;
+}
+
+.details-container .price {
+  font-size: 20px;
+}
+
+.details-container .description {
+  font-style: italic;
+}
+
+.details-container .add-button {
+  height: 2rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009eff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.details-container .add-button:hover {
+  background-color: #21aaff;
+}
+.details-container .add-button:active {
+  background-color: #42b7ff;
 }

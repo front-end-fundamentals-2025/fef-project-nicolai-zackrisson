@@ -1,39 +1,5 @@
 import { products } from "./data.js";
 
-// customElements.define(
-//   "product-card",
-//   class extends HTMLElement {
-//     constructor() {
-//       super();
-
-//       let template = document.getElementById("product-card");
-
-//       let content = template.content;
-
-//       const shadowRoot = this.attachShadow({ mode: "open" });
-//       shadowRoot.appendChild(content.cloneNode(true));
-//     }
-//   }
-// );
-
-// products.forEach((product) => {
-//   const productCard = document.createElement("product-card");
-//   productCard.setAttribute("id", product.id);
-
-//   const name = document.createElement("span");
-//   name.setAttribute("slot", "name");
-//   name.textContent = product.name;
-
-//   const price = document.createElement("span");
-//   price.setAttribute("slot", "price");
-//   price.textContent = product.price + "kr";
-
-//   productCard.appendChild(name);
-//   productCard.appendChild(price);
-
-//   productContainer.appendChild(productCard);
-// });
-
 const productContainer = document.querySelector(".product-container");
 
 productContainer.innerHTML = products
@@ -108,11 +74,4 @@ productContainer.addEventListener("click", (e) => {
   const id = e.target.closest(".product-card").id;
 
   window.location.assign(`details.html?id=${id}`);
-
-  // if (e.target.className === "product-card") {
-  //   window.location.assign(`details.html?id=${e.target.id}`);
-  // }
-  // if (e.target.parentElement.className === "product-card") {
-  //   window.location.assign(`details.html?id=${e.target.parentElement.id}`);
-  // }
 });

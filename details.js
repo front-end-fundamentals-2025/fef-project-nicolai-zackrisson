@@ -9,6 +9,7 @@ const product = products.find((product) => productId == product.id);
 
 console.log(product);
 
+document.querySelector(".details-image").textContent = product.image;
 document.querySelector(".details-title").textContent = product.name;
 document.querySelector(".price").textContent = product.price + "kr";
 document.querySelector(".description").textContent = product.description;
