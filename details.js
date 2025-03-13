@@ -1,5 +1,5 @@
 import { products } from "./data.js";
-import { renderCartCount } from "./main.js";
+import { bounceAnimation, renderCartCount } from "./helpers.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -40,7 +40,7 @@ button.addEventListener("click", () => {
     button.textContent = `Add To Cart (1)`;
   }
 
-  renderCartCount();
-
   localStorage.setItem("cart", JSON.stringify(cart));
+  bounceAnimation(document.querySelector(".cart-count"));
+  renderCartCount();
 });

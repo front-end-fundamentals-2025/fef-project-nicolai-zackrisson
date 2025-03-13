@@ -9,7 +9,7 @@ productContainer.innerHTML = products
         .product-card {
           display: flex;
           flex-direction: column;
-          border: 1px solid black;
+          border: 1px solid rgb(70, 70, 70);
           border-radius: 10px;
           gap: 1rem;
           padding: 1rem;
@@ -17,14 +17,15 @@ productContainer.innerHTML = products
           height: 300px;
           flex-grow: 0;
           cursor: pointer;
-
+          transition: all 0.1s ease-out
         }
         .product-card:hover {
-          background-color: #ededed
+          background-color:rgb(245, 250, 250);
+          scale: 1.03;
         }
 
         .product-card:active {
-          background-color: #d4d4d4
+          background-color: rgb(233, 244, 244);
         }
 
 

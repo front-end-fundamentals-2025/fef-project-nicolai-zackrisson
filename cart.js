@@ -1,5 +1,5 @@
 import { products } from "./data.js";
-import { renderCartCount } from "./main.js";
+import { renderCartCount, bounceAnimation } from "./helpers.js";
 
 const cartItems = document.querySelector(".cart-items");
 
@@ -8,7 +8,7 @@ const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const renderCart = () => {
   cartItems.innerHTML =
     cart.length < 1
-      ? `<p>cart empty</p>`
+      ? `<p>Cart is empty.</p>`
       : cart
           .map((item) => {
             const product = products.find((product) => item.id == product.id);
@@ -80,23 +80,22 @@ const renderCart = () => {
 };
 
 cartItems.addEventListener("click", (e) => {
-  const id = getItemId(e.target);
+  const itemId = parseInt(e.target.closest(".cart-item").id, 10);
 
+  // Add and Remove Buttons
   if (e.target.id === "add" || e.target.id === "remove") {
-    handleItem(id, e.target.id);
+    bounceAnimation(document.querySelector(".cart-count"));
+    handleItem(itemId, e.target.id);
   }
 
+  // Route when link is pressed
   if (
     e.target.className === "item-name" ||
     e.target.className === "item-image"
   ) {
-    window.location.assign(`details.html?id=${id}`);
+    window.location.assign(`details.html?id=${itemId}`);
   }
 });
-
-const getItemId = (element) => {
-  return parseInt(element.closest(".cart-item").id, 10);
-};
 
 const handleItem = (id, action) => {
   const item = cart.find((item) => item.id === id);
