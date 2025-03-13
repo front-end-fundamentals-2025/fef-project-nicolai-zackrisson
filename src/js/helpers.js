@@ -1,7 +1,6 @@
 export const bounceAnimation = (element) => {
   element.classList.remove("bounce");
   setTimeout(() => {
-    console.log(1);
     element.classList.add("bounce");
   }, 10);
 };
@@ -11,9 +10,10 @@ export const renderCartCount = () => {
   const count = document.querySelector(".cart-count");
 
   if (cart) {
-    console.log(cart);
-    const value = cart.reduce((pre, curr) => pre + curr.count, 0);
-    console.log(value);
+    const value = cart.reduce(
+      (totalCount, currentItem) => totalCount + currentItem.count,
+      0
+    );
     count.textContent = `${value}`;
   }
 };

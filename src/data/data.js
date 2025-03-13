@@ -55,7 +55,7 @@ export const products = [
     id: 8,
     name: "Gango",
     price: "661",
-    description: "don't know what to call this but it's cool",
+    description: "ma drilla",
     image: "🤙",
   },
   {

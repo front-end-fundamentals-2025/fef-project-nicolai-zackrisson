@@ -1,4 +1,4 @@
-import { products } from "./data.js";
+import { products } from "../data/data.js";
 
 const productContainer = document.querySelector(".product-container");
 
